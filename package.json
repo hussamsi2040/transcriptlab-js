@@ -1,0 +1,53 @@
+{
+  "name": "transcriptlab",
+  "version": "0.1.0",
+  "description": "Official JavaScript/TypeScript client for the TranscriptLab API — YouTube transcripts, caption discovery, batch and channel jobs, and audio/media transcription.",
+  "type": "module",
+  "license": "MIT",
+  "author": "TranscriptLab",
+  "homepage": "https://transcriptlab.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hussamsi2040/transcriptlab-js.git"
+  },
+  "keywords": [
+    "transcriptlab",
+    "youtube",
+    "transcript",
+    "captions",
+    "subtitles",
+    "speech-to-text",
+    "api-client"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/index.d.ts",
+        "require": "./dist/index.d.cts"
+      },
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  }
+}
